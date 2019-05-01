@@ -64,6 +64,14 @@ public class UI_Cliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cliente 1");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(jlist_Cli1);
 
@@ -125,6 +133,15 @@ public class UI_Cliente extends javax.swing.JFrame {
         modelo.addElement("Yo:- "+mensaje+"\n");
         txt_Cli1.setText("");      
     }//GEN-LAST:event_btn_Send1ActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        cliente.confirmarDesconexion();
+    }//GEN-LAST:event_formWindowClosing
         
     public void addMensaje(String emisor, String mensaje) {
         modelo.addElement(emisor+":- "+mensaje+"\n");
@@ -146,13 +163,6 @@ public class UI_Cliente extends javax.swing.JFrame {
     public void sesionIniciada(String identificador) {
         this.setTitle(identificador);
     }
-    
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {                                  
-    }
-    
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
-        cliente.confirmarDesconexion();
-    } 
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

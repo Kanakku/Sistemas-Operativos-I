@@ -11,7 +11,6 @@ public class Server extends Thread{
     
     //Lista enlazada.
     LinkedList<CliHilo> clientes;
-    
     private final UI_Servidor test;
     private final String puerto;
     

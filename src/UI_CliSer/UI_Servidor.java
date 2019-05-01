@@ -15,11 +15,7 @@ public class UI_Servidor extends javax.swing.JFrame {
     private final Server servidor;
     DefaultListModel modelo = new DefaultListModel();
     String mensaje;
-    
-    public void UI_Servidor(){
         
-    }
-    
     public UI_Servidor() {
         initComponents();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,10 +35,6 @@ public class UI_Servidor extends javax.swing.JFrame {
     
     public void agregarLog(String texto) {
         modelo.addElement(texto);
-    }
-    
-    public void addMensaje(String emisor, String mensaje) {
-        modelo.addElement(emisor+":- "+mensaje+"\n");
     }
     
     @SuppressWarnings("unchecked")
